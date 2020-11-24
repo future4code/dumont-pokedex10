@@ -1,76 +1,46 @@
-import React  from "react";
-import axios from "axios"
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+// import "./styles.css";
+import axios from "axios";
+import PokeCard from "../Components/PokeCard/PokeCard";
 
-const PokemonSelect = styled.select`
-  display:flex;
-  margin:1rem  40rem;
-  justify-content:center;
-`;
-
-const Section = styled.section`
-  display:flex;
-position:relative;
-top:17.7rem;
-height:5rem;
-  justify-content:center;
-  background-color:black;
-`;
+const CardPokemon = (props) => {
+  const [pokeList, setPokeList] = useState([]);
+  const [pokeName, setPokeName] = useState("");
 
 
+  useEffect(() => {
+  
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon/?limit=20")
+      .then((response) => {
+        console.log("response" , response.data.results)
+        // response.data.results.map((pokemon)  => {
 
-
-
-function CardPokemon () {
-  state = {
-    pokemonLista: [],
-    selectedPokemonUrl: ""
-  };
-
-  componentDidMount() {
-    this.buscarPokemons();
-  }
-
-  buscarPokemons = () => {
-    const apiUrl = "https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20";
-    
-    axios.get(apiUrl).then((resposta) => {
-      // handle success
-      this.setState({ pokemonLista: resposta.data.results });
-    });
-  };
-
-  onChangeSelect = (event) => {
-    
-    const apiUrl = `https://pokeapi.co/api/v2/pokemon/${event.target.value}`;
-    axios.get(apiUrl).then((resposta) => {
-      // handle success
-      console.log("RESPOSTA POKEMON", resposta.data.sprites.front_default);
-      this.setState({
-        selectedPokemonUrl: resposta.data.sprites.front_default
+        //   return(
+        //    < img src={pokemon.url}  />
+        //   )
+        // })
+        setPokeList(response.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
       });
-    });
+  });
+
+ 
+
+  const changePokeName = (event) => {
+    setPokeName(event.target.value);
   };
 
-  render() {
-   
-    const optionList = this.state.pokemonLista.map((pokemon) => {
-      return <option key={pokemon.name}>{pokemon.name}</option>;
-    });
+  return (
+  <div>
 
-    return (
 
-      <div>
-        
-         
-        <PokemonSelect onChange={this.onChangeSelect}>
-          {optionList}
-        </PokemonSelect>
-        <img src={this.state.selectedPokemonUrl} />
 
-      </div>
-    );
+  </div>
+
+  
+  )
   }
-}
-
 export default CardPokemon;
