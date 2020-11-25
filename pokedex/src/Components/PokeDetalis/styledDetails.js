@@ -22,3 +22,24 @@ export const DivPokeImage = styled.div `
     align-items: center;
     justify-content: center;
 `
+
+export const DivDetails = styled.div `
+    height: 50vh;
+    width: 300px;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+`
+export const P = styled.p `
+    
+`
+export const DivType = styled.div `
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    justify-content: space-around;
+    align-items: center;
+
+`
