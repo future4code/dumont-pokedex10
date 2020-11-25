@@ -1,40 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import {DivCard, DivButtons, Buttons, CardTitle } from './styledPokeCard'
 
-const PokeCard = (props) => {
-  const [pokemon, setPokemon] = useState({});
-
-
-  useEffect(() => {
-    // método que roda após a montagem do componente
-    pegaPokemon(props.pokemon);
-  }, [props.pokemon]);
-
-
-
-
-  const pegaPokemon = (pokeName) => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
-      .then((response) => {
-        // guarda as infos do pokemon no estado
-        setPokemon(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  return (
-    <div>
-      <p>{pokemon.name}</p>
-      <p>{pokemon.weight} Kg</p>
-      {pokemon.types && <p>{pokemon.types[0].type.name}</p>}
-      {pokemon.sprites && (
-        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-      )}
-    </div>
-  );
-};
-
-export default PokeCard;
+export default function PokeCard () {
+    return (
+        <DivCard>
+            <CardTitle>PokeCard</CardTitle>
+            <DivButtons>
+                <Buttons>adicionar.</Buttons>
+                <Buttons>ver detal.</Buttons>
+            </DivButtons>
+        </DivCard>
+    )
+}
