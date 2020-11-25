@@ -1,5 +1,5 @@
 import {DivContainerImage, DivPokeImage} from './styledDetails'
-
+//imagens dos pokemons
 export default function PokeImage () {
     return (
         <DivContainerImage>
