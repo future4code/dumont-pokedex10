@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+
+//estilização dos detalhes
 export const DivContainerImage = styled.div `
     display: flex;
     margin-left: 100px;
