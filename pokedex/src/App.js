@@ -5,6 +5,8 @@ import PokeImage from './Components/PokeDetalis/PokeImage';
 import PokeStats from './Components/PokeDetalis/PokeStats';
 
 
+
+
 function App() {
   return (
     <div className="App">
