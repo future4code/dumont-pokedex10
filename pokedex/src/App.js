@@ -4,15 +4,10 @@ import './App.css';
 
 
 
-
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* evitar dar push com elementos nessa area */}
-      {/* <PokeStats/>
-      <PokeImage/> */}
-      
-    
     </div>
   );
 }

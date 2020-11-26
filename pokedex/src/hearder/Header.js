@@ -9,7 +9,6 @@ const Titulo = styled.h1`
     
 `
 const Botao = styled.button`
-    
     border-radius:5px;
     font-family: SultanNahiaW20;
     font-size: 15px;
