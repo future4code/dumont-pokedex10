@@ -1,13 +1,19 @@
-
-import './App.css';
-
-
+import React, { useContext } from "react";
+import Router from "./routes/Router";
+import GlobalState from './Components/global/GlobalState';
 
 
 function App() {
+  
+ 
   return (
-    <div>
-      {/* evitar dar push com elementos nessa area */}
+    <div className="App">
+
+        <GlobalState>
+      <Router />
+      
+    </GlobalState>
+   
     </div>
   );
 }
