@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Home from '../Components/Home/Home';
 import Header from '../hearder/Header';
 
 const Router = () => {
@@ -11,6 +12,7 @@ const Router = () => {
                 <Route exact path={'/'}>
                     <Header/>
                     <p>Home</p>
+                    <Home />
                 </Route>
                 <Route exact path={'/pokedex'}>
                     <Header/>

@@ -22,7 +22,7 @@ export const Buttons = styled.button`
     border-bottom: none;
     border-left: none;
 `
-export const CardTitle = styled.h3 `
+export const CardTitle = styled.img `
     margin: auto;
     font-size: 1.8em;
     font-weight: lighter;
