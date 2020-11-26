@@ -1,3 +1,4 @@
+
 import {DivCard, DivButtons, Buttons, CardTitle } from './styledPokeCard'
 
 export default function PokeCard () {
