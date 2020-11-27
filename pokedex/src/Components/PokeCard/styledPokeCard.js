@@ -5,25 +5,45 @@ export const DivCard = styled.div `
     display: flex;
     width: 300px;
     height: 300px;
-    border: 1px solid black;
+    background-color: #e8f0f4;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     margin: auto;
     margin-top: 10px;
+    border-radius: 30px;
 `
 export const DivButtons = styled.div `
     display: flex;
     justify-content: center;
+    
 `
-export const Buttons = styled.button`
+export const ButtonLeft = styled.button`
     width: 150px;
     height: 50px;
-    background-color: transparent;
-    border-bottom: none;
-    border-left: none;
+    background-color: #30a7d7;
+    border: none;
+    outline: none;
+    color: white;
+    box-shadow: 1px 1px 2px black;
+    border-bottom-left-radius: 30px;
+    :hover{
+        background-color: orangered;
+    }
+    :active{
+        box-shadow: none;
+    }
 `
-export const CardTitle = styled.img `
+export const ButtonRight = styled(ButtonLeft)`
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+`
+export const PokeImage = styled.img `
     margin: auto;
-    font-size: 1.8em;
     font-weight: lighter;
+    width: 60%;
+`
+export const PokeName = styled.h1 `
+    font-size: 1.2em;
+    color: #30a7d7 ;
 `

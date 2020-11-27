@@ -33,7 +33,7 @@ const funcaoDetalhes = ( )  => {
 {console.log('werdw', pokemonList)}
   {/* pega o estado pokemonList e mapeia ele pra pegar o url */}
   {pokemonList && pokemonList.map((item) =>{
-  return <PokeCard key={item.id} adicionar={funcaoAdicionar}  detalhes={funcaoDetalhes} img={item.sprites.front_default} /> 
+  return <PokeCard nome={item.name} key={item.id} adicionar={funcaoAdicionar}  detalhes={funcaoDetalhes} img={item.sprites.front_default} /> 
 
 
   }

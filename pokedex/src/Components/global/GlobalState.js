@@ -7,6 +7,7 @@ const GlobalState = (props) => {
   //pokemonList é a lista de 20 pokemons 
   //pokedex é a lista de pokemons 
   const [pokemonList, setPokemonList] = useState([]);
+  
 
 useEffect(() => {
   getPokemons() 
@@ -15,10 +16,11 @@ useEffect(() => {
 const getPokemons = () => {
   //array estratégico para enviar uma única vez ao state
   const listPokemon = [];
+  
   //numero de requisições de acordo com a quantidade de pokemnos
   //que você desejar.
   //cria um array de pokemons de acordo com a quantidade de repetições
-  for (let i = 1; i < 24; i++) {
+  for (let i = 1; i < 21; i++) {
     axios
     .get(`https://pokeapi.co/api/v2/pokemon/${i}/`)
       .then((response) => {
@@ -34,7 +36,7 @@ const getPokemons = () => {
         //condição para envio da lista
         //se a largura estivar do tamanho que vc desejar, 
         //ele vai passar para o state
-        if (listPokemon.length === 23) {
+        if (listPokemon.length === 20 ) {
           setPokemonList(listPokemon);
         }
       })
@@ -46,7 +48,7 @@ const getPokemons = () => {
 
   return (
     <div>
-      <GlobalStateContext.Provider value={pokemonList}>
+      <GlobalStateContext.Provider value={pokemonList}>  
       {props.children}
       {console.log(pokemonList)}
     </GlobalStateContext.Provider>
