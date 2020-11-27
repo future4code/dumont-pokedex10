@@ -1,5 +1,11 @@
- import styled from 'styled-components';
+import styled from 'styled-components';
 
 export const GridContainer = styled.div`
-  color:black;
-`;
+  display: flex;
+  width: 66.33vw;
+  flex-wrap: wrap;
+  margin: auto;
+  
+`
+
+

@@ -1,14 +1,15 @@
 
-import {DivCard, DivButtons, Buttons, CardTitle } from './styledPokeCard'
+import {DivCard,PokeName, DivButtons, ButtonLeft, ButtonRight, PokeImage} from './styledPokeCard'
 
 export default function PokeCard (props) {
     
     return (
         <DivCard>
-            <CardTitle src={props.img}></CardTitle>
+            <PokeName>{props.nome}</PokeName>
+            <PokeImage src={props.img}></PokeImage>
             <DivButtons>
-                <Buttons onClick={props.adicionar}>adicionar..</Buttons>
-                <Buttons onClick={props.detalhes}>ver detal..</Buttons>
+                <ButtonLeft onClick={props.adicionar}>adicionar..</ButtonLeft>
+                <ButtonRight onClick={props.detalhes}>ver detal..</ButtonRight>
             </DivButtons>
         </DivCard>
     )
