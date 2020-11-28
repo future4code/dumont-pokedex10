@@ -34,19 +34,10 @@ export default function Pokedex () {
   
     return (
         <div>
-        
             {novaPokedexList && novaPokedexList.filter((item) => {
-           return item.props.id === 1
-           
-       }
-       )
-           }
-           {console.log("lista", novaPokedexList)}
-
+                return item.props.id === 1
+                })
+            }
         </div>
-
-
-        
     )
-
 }

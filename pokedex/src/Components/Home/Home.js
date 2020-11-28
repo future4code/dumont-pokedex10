@@ -3,22 +3,28 @@ import React, { useContext ,useState} from 'react';
 import GlobalStateContext from '../global/GlobalStateContext';
 import { useHistory } from 'react-router-dom';
 import PokeCard from '../PokeCard/PokeCard'
+
+
 import { GridContainer } from './styled';
 
 function Home  ()  {
 
+
   const {states,buttons} = useContext(GlobalStateContext);
   const history = useHistory();
-  //hook para manipular a troca de páginas
+        
 
   const funcaoAdicionar = ( id)  => {
-    //adiciona os pokemons na Pokedex através do estado global
+  //adiciona os pokemons na Pokedex através do estado global
     const pokemonsSelected = buttons.adicionarPokemon
     pokemonsSelected.push(id)
     buttons.setAdicionarPokemon(pokemonsSelected) 
   }
+    
+    
 
   const funcaoDetalhes = ( id)  => {
+    //ver detalhes do pokemon
     buttons.setVerDetalhes(id)
     history.push('/detalhes')
   }
@@ -32,5 +38,12 @@ function Home  ()  {
             ) 
           } 
     </GridContainer>
- 
+  )
+}
+
+
+
+
+
+
 export default Home;
