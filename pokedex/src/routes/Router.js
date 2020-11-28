@@ -11,20 +11,21 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
+                {/* página home */}
                 <Route exact path={'/'}>
                     <Header/>
                     <Home />
                 </Route>
+                 {/* página pokedex */}
                 <Route exact path={'/pokedex'}>
                     <Header/>
-
                     <Pokedex/>
-                    <p>Pokedex</p>
-
                 </Route>
+                 {/* página detalhes */}
                 <Route exact path={'/detalhes'}>
                     <Header/>
                 </Route>
+
             </Switch>
         </BrowserRouter>
     )

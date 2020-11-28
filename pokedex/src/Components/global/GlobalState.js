@@ -5,11 +5,12 @@ import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
   //pokemonList é a lista de 20 pokemons 
-  //pokedex é a lista de pokemons 
   const [pokemonList, setPokemonList] = useState([]);
-
+  //array de pokemons adicionados
   const  [adicionarPokemon, setAdicionarPokemon] = useState([]);
+  //detalhes do pokemon
   const [verDetalhes, setVerDetalhes] = useState()
+  //variáveis para o provider
   const states = {pokemonList, setPokemonList}
   const buttons= {adicionarPokemon, setAdicionarPokemon, verDetalhes, setVerDetalhes}
   const data = {states,buttons}
@@ -22,7 +23,6 @@ useEffect(() => {
 const getPokemons = () => {
   //array estratégico para enviar uma única vez ao state
   const listPokemon = [];
-  
   //numero de requisições de acordo com a quantidade de pokemnos
   //que você desejar.
   //cria um array de pokemons de acordo com a quantidade de repetições
@@ -51,17 +51,12 @@ const getPokemons = () => {
       });
   }
 };
-const states = {pokemonList, setPokemonList}
-const buttons= {adicionarPokemon, setAdicionarPokemon}
 
-const data = {states,buttons}
   return (
     <div>
       <GlobalStateContext.Provider value={data}>  
-      {props.children}
-
-
-    </GlobalStateContext.Provider>
+        {props.children}
+      </GlobalStateContext.Provider>
     </div>
   );
 };
