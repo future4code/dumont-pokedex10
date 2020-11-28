@@ -11,16 +11,13 @@ const Router = () => {
             <Switch>
                 <Route exact path={'/'}>
                     <Header/>
-                    <p>Home</p>
                     <Home />
                 </Route>
                 <Route exact path={'/pokedex'}>
                     <Header/>
-                    <p>Pokedex</p>
                 </Route>
                 <Route exact path={'/detalhes'}>
                     <Header/>
-                    <p>Página de detalhes</p>
                 </Route>
             </Switch>
         </BrowserRouter>

@@ -8,45 +8,32 @@ import PokeCard from '../PokeCard/PokeCard'
 import { GridContainer } from './styled';
 
 function Home  ()  {
-  const pokemonList = useContext(GlobalStateContext)
+  const {states,buttons} = useContext(GlobalStateContext);
+  const history = useHistory();
+  //hook para manipular a troca de páginas
 
-      //hook para manipular a troca de páginas
-      const history = useHistory()
-
-       //função para trocar de página
-    const goToPage = (path) => {
-      history.push (path)
+  const funcaoAdicionar = ( id)  => {
+    //adiciona os pokemons na Pokedex através do estado global
+    const pokemonsSelected = buttons.adicionarPokemon
+    pokemonsSelected.push(id)
+    buttons.setAdicionarPokemon(pokemonsSelected) 
+    
   }
 
-const funcaoAdicionar = ( )  => {
-console.log('fefe')
-}
-
-const funcaoDetalhes = ( )  => {
-  console.log('fgefse')
+  const funcaoDetalhes = ( id)  => {
+    buttons.setVerDetalhes(id)
+    history.push('/detalhes')
   }
 
   return(
-   
-  
-<GridContainer>
-{console.log('werdw', pokemonList)}
-  {/* pega o estado pokemonList e mapeia ele pra pegar o url */}
-  {pokemonList && pokemonList.map((item) =>{
-  return <PokeCard nome={item.name} key={item.id} adicionar={funcaoAdicionar}  detalhes={funcaoDetalhes} img={item.sprites.front_default} /> 
-
-
-  }
-  )
-}
-
-</GridContainer>
-
-      
-    
-
-
-
+    <GridContainer>
+      {/* pega o estado pokemonList e mapeia ele pra pegar o url  */}
+          {states.pokemonList && states.pokemonList.map((item) =>{ 
+            return <PokeCard nome={item.name} key={item.id} adicionar={() => {funcaoAdicionar(item.id)}} detalhes={() => {funcaoDetalhes(item.id)}} img={item.sprites.front_default} />  
+              }
+            ) 
+          } 
+    </GridContainer>
   )
 }
 
