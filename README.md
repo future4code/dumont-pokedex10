@@ -7,12 +7,11 @@ Nome dos integrantes:
 
 http://dumont.pokedex10.surge.sh/
 
-O que funciona até o momento:
+O que funciona:
 - Listar porkemons
 - Trocar de páginas
 - adicionar pokemons na pokedex
 -remover pokemons na pokedex
-
-O que não funciona: 
 - ver detalhes do pokemon
+OBS: todas as funções do projeto sem desafios.
 
