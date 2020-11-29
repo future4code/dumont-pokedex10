@@ -1,17 +1,20 @@
-import styled from 'styled-components'
+import { useContext } from 'react';
+import GlobalStateContext from '../global/GlobalStateContext';
 import { DivType } from './styledDetails'
 
 
 
 
 export default function PokeMoves() {
-    
+    const {states} = useContext(GlobalStateContext);
+    const pokemon = states.pokemonDetails[0]
     return (
         <DivType>
             <h1>Moves</h1>
-            <p>Move name 1</p>
-            <p>Move name 2</p>
-            <p>Move name 3</p>
+            <p>{pokemon.moves[0].move.name}</p>
+            <p>{pokemon.moves[1].move.name}</p>
+            <p>{pokemon.moves[2].move.name}</p>
+            
         </DivType>
     )
 

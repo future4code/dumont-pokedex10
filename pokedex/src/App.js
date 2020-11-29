@@ -8,8 +8,7 @@ function App() {
     <div className="App">
 
     <GlobalState>
-      <Router />
-      
+      <Router /> 
     </GlobalState>
    
     </div>

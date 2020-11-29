@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from '../Components/Home/Home';
 import Pokedex from '../Components/PokeCard/Pokedex';
+import PageDetails from '../Components/PokeDetalis/PageDetails';
 import Header from '../hearder/Header';
 
 
@@ -24,6 +25,7 @@ const Router = () => {
                  {/* página detalhes */}
                 <Route exact path={'/detalhes'}>
                     <Header/>
+                    <PageDetails/>
                 </Route>
 
             </Switch>
