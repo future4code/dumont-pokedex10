@@ -8,11 +8,13 @@ const GlobalState = (props) => {
   const [pokemonList, setPokemonList] = useState([]);
   //array de pokemons adicionados
   const  [adicionarPokemon, setAdicionarPokemon] = useState([]);
-  //detalhes do pokemon
+  //pokemon da pokedex
   const [pokedex, setPokedex] = useState()
+  //ver detalhes do pokemon
+  const [pokemonDetails, setPokemonDetails] = useState([])
   //variáveis para o provider
-  const states = {pokemonList, setPokemonList, pokedex, setPokedex}
-  const buttons= {adicionarPokemon, setAdicionarPokemon, }
+  const states = {pokemonList, setPokemonList, pokedex, setPokedex, pokemonDetails}
+  const buttons= {adicionarPokemon, setAdicionarPokemon, setPokemonDetails}
   const data = {states,buttons}
 
 

@@ -18,8 +18,7 @@ function Home  ()  {
   //adiciona os pokemons na Pokedex através do estado global
     adicionarPokemonPokedex(id)
     const pokedex = buttons.adicionarPokemon
-    const pokeIndex = states.pokemonList
-    const novosPokemons = pokeIndex.filter ((poke => { return poke.id !== id })) 
+    const novosPokemons = states.pokemonList.filter ((poke => { return poke.id !== id })) 
     pokedex.push(id)
     states.setPokemonList(novosPokemons);
     buttons.setAdicionarPokemon(pokedex)
@@ -28,19 +27,18 @@ function Home  ()  {
 
   //recupera pokemons da pokedex
   const adicionarPokemonPokedex = (id) => {
-    const pokeIndex = states.pokemonList
-    const novosPokemons = pokeIndex.filter ((poke => { return poke.id === id })) 
+    const novosPokemons = states.pokemonList.filter ((poke => { return poke.id === id })) 
     const pokedex = states.pokedex 
     if (pokedex.length < 20){
     pokedex.unshift(novosPokemons[0])
-    console.log(pokedex )
     states.setPokedex(pokedex)
     }
   }
 
   const funcaoDetalhes = ( id)  => {
     //ver detalhes do pokemon
-    buttons.setVerDetalhes(id)
+    const novosPokemons = states.pokemonList.filter ((poke => { return poke.id === id })) 
+    buttons.setPokemonDetails(novosPokemons)
     history.push('/detalhes')
   }
 

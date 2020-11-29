@@ -4,23 +4,24 @@ import styled from 'styled-components'
 //estilização dos detalhes
 export const DivContainerImage = styled.div `
     display: flex;
-    margin-left: 100px;
     flex-direction: column;
     height: 600px;
     width: 350px;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid black;
-    margin-top: 100px;
+    font-weight: bolder;
+    border-radius: 30px;
+    background-color: #e8f0f4;
+    color: #30a7d7 ;
 
 `
 export const DivPokeImage = styled.div `
     height: 200px;
     width: 200px;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #e8f0f4;
 `
 
 export const DivDetails = styled.div `
@@ -29,17 +30,33 @@ export const DivDetails = styled.div `
     display:flex;
     flex-direction: column;
     align-items: flex-start;
-`
-export const P = styled.p `
     
 `
+export const P = styled.p `
+    margin: auto;
+    font-weight: lighter;
+`
 export const DivType = styled.div `
+    background-color: #e8f0f4;
+    color: #30a7d7 ;
+    font-weight: 500;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 400px;
     height: 400px;
     justify-content: space-around;
     align-items: center;
+
+`
+export const DivType2 = styled.div `
+    display: flex;
+    width: 400px;
+    height: 50px;
+    justify-content: space-around;
+    background-color: #e8f0f4;
+    color: #30a7d7 ;
+    font-weight: bolder;
+    border-radius: 30px;
 
 `
