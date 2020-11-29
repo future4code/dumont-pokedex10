@@ -63,7 +63,7 @@ export default function Pokedex () {
                      
                 })
             }
-            {console.log(buttons.adicionarPokemon)}
+            
             
         </PokedexContainer> 
     )

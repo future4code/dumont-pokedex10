@@ -33,7 +33,6 @@ function Home  ()  {
     const pokedex = states.pokedex 
     if (pokedex.length < 20){
     pokedex.unshift(novosPokemons[0])
-    console.log(pokedex )
     states.setPokedex(pokedex)
     }
   }
