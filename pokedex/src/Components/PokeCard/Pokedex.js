@@ -1,43 +1,52 @@
 import React, {useState, useContext, useEffect} from 'react';
 import PokeCard from './PokeCard';
-import {useHistory} from 'react-router-dom';
 import GlobalStateContext from '../global/GlobalStateContext';
 
 export default function Pokedex () {
-    const pokemonList = useContext(GlobalStateContext)
+    const {states, buttons} = useContext(GlobalStateContext);
     const [novaPokedexList, setNovaPokedexList] = useState()
+  
 
     useEffect (() => {
-        setNovaPokedexList(pokemonList.map((item) => {
-            return <PokeCard id = {item.id} nome = {item.name} img={item.sprites.front_default} key = {item.id} remover = {removerPokemon} detalhes = {detalhesPokemon} />
-        }))
+        //mapea todos pokemons ao carregar a tela
+        if(!novaPokedexList){
+            setNovaPokedexList(states.pokedex.map((pokemon) => {
+                    return <PokeCard id={pokemon.id} nome = {pokemon.name} img={pokemon.sprites.front_default} key = {pokemon.id} remover = {() => {removerPokemon(pokemon.id)}} detalhes = {detalhesPokemon} />
+                })
+            )
+        }    
+     
     }, [])
 
-    const history = useHistory()
-
-    const goToPage = (path) => {
-        history.push(path)
+    const removerPokemon = (id) => {
+        const pokeIndex = states.pokedex
+        const novosPokemons = pokeIndex.filter ((poke => { return poke.id !== id })) 
+        states.setPokedex (novosPokemons)
+        const pokemons = buttons.adicionarPokemon
+        pokemons.splice(buttons.adicionarPokemon.indexOf(id), 1)
+       
     }
 
-    const removerPokemon = (itemARemover) => {
-        /*
 
-
-        */
-        // console.log("removerPokemon")
-    }
 
     const detalhesPokemon = () => {
-        // console.log("detalhesPokemon")
+
     }
 
+   
   
     return (
         <div>
-            {novaPokedexList && novaPokedexList.filter((item) => {
-                return item.props.id === 1
+            
+            {novaPokedexList && novaPokedexList.filter((pokemon) => {
+                  for (let i = 0; i <= buttons.adicionarPokemon.length; i++){
+                    if(pokemon.props.id === buttons.adicionarPokemon[i]){
+                      return pokemon
+                    }
+                  }
+                     
                 })
             }
-        </div>
+        </div> 
     )
 }

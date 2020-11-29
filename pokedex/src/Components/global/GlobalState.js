@@ -9,16 +9,17 @@ const GlobalState = (props) => {
   //array de pokemons adicionados
   const  [adicionarPokemon, setAdicionarPokemon] = useState([]);
   //detalhes do pokemon
-  const [verDetalhes, setVerDetalhes] = useState()
+  const [pokedex, setPokedex] = useState()
   //variáveis para o provider
-  const states = {pokemonList, setPokemonList}
-  const buttons= {adicionarPokemon, setAdicionarPokemon, verDetalhes, setVerDetalhes}
+  const states = {pokemonList, setPokemonList, pokedex, setPokedex}
+  const buttons= {adicionarPokemon, setAdicionarPokemon, }
   const data = {states,buttons}
 
 
 useEffect(() => {
   getPokemons() 
-}, [])
+  localStorage.setItem("chave", [])
+}, [adicionarPokemon])
 
 const getPokemons = () => {
   //array estratégico para enviar uma única vez ao state
@@ -44,6 +45,7 @@ const getPokemons = () => {
         //ele vai passar para o state
         if (listPokemon.length === 20 ) {
           setPokemonList(listPokemon);
+          setPokedex(listPokemon)
         }
       })
       .catch((error) => {

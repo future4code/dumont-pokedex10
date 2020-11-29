@@ -16,9 +16,12 @@ function Home  ()  {
 
   const funcaoAdicionar = ( id)  => {
   //adiciona os pokemons na Pokedex através do estado global
-    const pokemonsSelected = buttons.adicionarPokemon
-    pokemonsSelected.push(id)
-    buttons.setAdicionarPokemon(pokemonsSelected) 
+    const pokedex = buttons.adicionarPokemon
+    const pokeIndex = states.pokemonList
+    const novosPokemons = pokeIndex.filter ((poke => { return poke.id !== id })) 
+    pokedex.push(id)
+    states.setPokemonList(novosPokemons);
+    buttons.setAdicionarPokemon(pokedex)
   }
     
     
@@ -37,6 +40,7 @@ function Home  ()  {
               }
             ) 
           } 
+          
     </GridContainer>
   )
 }
