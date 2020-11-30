@@ -10,18 +10,17 @@ const Img = styled.img `
 
 
 export default function PokeImageDetails () {
-    const {states} = useContext(GlobalStateContext);
-    const pokemon = states.pokemonDetails[0]
+    const states = useContext(GlobalStateContext);
+    const pokemon = states.pokemonDetails 
     return (
         <DivContainerImage>
             <DivPokeImage>
-               {pokemon && <Img src = {pokemon.sprites.front_default}/>}
+               {pokemon.sprites.front_default && <Img src = {pokemon.sprites.front_default}/>}
             </DivPokeImage>
             <DivPokeImage>
-                {pokemon && <Img src = {pokemon.sprites.front_default}/>}
+                {pokemon.sprites.back_default && <Img src = {pokemon.sprites.back_default}/>}
             </DivPokeImage>
         </DivContainerImage>
 
     )
 }
-//back_default

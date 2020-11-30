@@ -4,24 +4,20 @@ import axios from "axios";
 import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
-  //pokemonList é a lista de 20 pokemons 
+  //Lista de pokemons da home
   const [pokemonList, setPokemonList] = useState([]);
-  //array de pokemons adicionados
-  const  [adicionarPokemon, setAdicionarPokemon] = useState([]);
-  //pokemon da pokedex
-  const [pokedex, setPokedex] = useState()
-  //ver detalhes do pokemon
+  //lista de pokemons da pokedex
+  const [pokedex, setPokedex] = useState([])
+  //para página de detalhes do pokemon
   const [pokemonDetails, setPokemonDetails] = useState([])
   //variáveis para o provider
-  const states = {pokemonList, setPokemonList, pokedex, setPokedex, pokemonDetails}
-  const buttons= {adicionarPokemon, setAdicionarPokemon, setPokemonDetails}
-  const data = {states,buttons}
+  const states = {pokemonList, setPokemonList, pokedex, setPokedex, pokemonDetails, setPokemonDetails}
+ 
 
 
 useEffect(() => {
   getPokemons() 
-  localStorage.setItem("chave", [])
-}, [adicionarPokemon])
+}, [])
 
 const getPokemons = () => {
   //array estratégico para enviar uma única vez ao state
@@ -47,7 +43,6 @@ const getPokemons = () => {
         //ele vai passar para o state
         if (listPokemon.length === 20 ) {
           setPokemonList(listPokemon);
-          setPokedex(listPokemon)
         }
       })
       .catch((error) => {
@@ -58,7 +53,7 @@ const getPokemons = () => {
 
   return (
     <div>
-      <GlobalStateContext.Provider value={data}>  
+      <GlobalStateContext.Provider value={states}>  
         {props.children}
       </GlobalStateContext.Provider>
     </div>
