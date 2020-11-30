@@ -1,16 +1,17 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Michael Soto
+- Lilian Aparecida Verônica Nicolau
+- Índio Medeiros
 
-Link do Surge: www.link.com.br
+http://dumont.pokedex10.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+- Listar porkemons
+- Trocar de páginas
+- adicionar pokemons na pokedex
+-remover pokemons na pokedex
+- ver detalhes do pokemon
+OBS: todas as funções do projeto sem desafios.
 
-O que não funciona: 
-- Item 3
-- Item 4
