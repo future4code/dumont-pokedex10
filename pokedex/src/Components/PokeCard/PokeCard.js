@@ -5,7 +5,7 @@ export default function PokeCard (props) {
     const history = useHistory()
 
     return (
-        <DivCard>
+        <DivCard id={props.id}>
             <PokeName>{props.nome}</PokeName>
             <PokeImage src={props.img}></PokeImage>
             <DivButtons>
