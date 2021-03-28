@@ -1,6 +1,6 @@
 import {DivType2} from './styledDetails'
 import { useContext } from 'react';
-import GlobalStateContext from '../global/GlobalStateContext';
+import GlobalStateContext from '../../global/GlobalStateContext';
 
 
 export default function PokeType () {
