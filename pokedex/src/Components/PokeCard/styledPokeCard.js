@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-//estilização
 export const DivCard = styled.div `
     display: flex;
     width: 300px;

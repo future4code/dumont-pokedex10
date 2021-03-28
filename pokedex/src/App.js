@@ -1,18 +1,15 @@
 import React from "react";
 import Router from "./routes/Router";
-import GlobalState from './Components/global/GlobalState';
-
+import GlobalState from "./global/GlobalState";
 
 function App() {
   return (
-    <div className="App">
-
-    <GlobalState>
-      <Router /> 
-    </GlobalState>
-   
+    <div>
+      <GlobalState>
+        <Router />
+      </GlobalState>
     </div>
   );
 }
 
-export default App;
+export default App; 
